@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "LqCBs7J3H6p0HjNKWfzbwypNxwnkjJMbxGBLV3MiJcE=",
+  "Source": "ASPProjekat.API",
+  "BasePath": "_content/ASPProjekat.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ASPProjekat.API\\wwwroot",
+      "Source": "ASPProjekat.API",
+      "ContentRoot": "C:\\Users\\Petar\\Documents\\GitHub\\aspbookstore\\ASPProjekat.API\\wwwroot\\",
+      "BasePath": "_content/ASPProjekat.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Petar\\Documents\\GitHub\\aspbookstore\\ASPProjekat.API\\wwwroot\\images\\editions\\default.png",
+      "SourceId": "ASPProjekat.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Petar\\Documents\\GitHub\\aspbookstore\\ASPProjekat.API\\wwwroot\\",
+      "BasePath": "_content/ASPProjekat.API",
+      "RelativePath": "images/editions/default.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\editions\\default.png"
+    }
+  ]
+}
