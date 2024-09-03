@@ -1,5 +1,7 @@
-﻿using ASPProjekat.ApplicationLayer.Commands;
+﻿using ASPProjekat.API.DTO;
+using ASPProjekat.ApplicationLayer.Commands;
 using ASPProjekat.ApplicationLayer.DTO;
+using ASPProjekat.ApplicationLayer.Queries;
 using ASPProjekat.DataAccess;
 using ASPProjekat.Implementation;
 using Microsoft.AspNetCore.Http;
@@ -17,9 +19,18 @@ namespace ASPProjekat.API.Controllers
         {
             _context = context;
         }
+        // GET: api/<EditionController>
+        [HttpGet]
+        public IActionResult Get([FromQuery] BookSearchDto search,
+                                [FromServices] IGetBooks query,
+                                 [FromServices] UseCaseHandler handler)
+        {
+            return Ok(handler.HandleQuery(query, search));
+        }
         // POST api/<EditionController>
         [HttpPost]
-        public IActionResult PostEdition([FromBody] CreateEditionDto dto,
+        public IActionResult PostEdition(
+                                  [FromForm] CreateEditionDto dto,
                                   [FromServices] ICreateEdition command,
                                   [FromServices] UseCaseHandler handler
 )
@@ -29,9 +40,15 @@ namespace ASPProjekat.API.Controllers
         }
         // PUT api/<BooksController>
         [HttpPut]
-        public void PutEdition([FromBody] UpdateEditionDto dto, [FromServices] IUpdateEdition command, [FromServices] UseCaseHandler handler)
+        public void PutEdition([FromForm] UpdateEditionDto dto, [FromServices] IUpdateEdition command, [FromServices] UseCaseHandler handler)
         {
             handler.HandleCommand(command, dto);
+        }
+        // DELETE api/<BooksController>
+        [HttpDelete]
+        public void DeleteEdition([FromBody] int editionId, [FromServices] IDeleteEdition command, [FromServices] UseCaseHandler handler)
+        {
+            handler.HandleCommand(command, editionId);
         }
     }
 }

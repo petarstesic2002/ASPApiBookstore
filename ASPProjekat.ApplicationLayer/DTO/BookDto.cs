@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,5 +21,6 @@ namespace ASPProjekat.ApplicationLayer.DTO
         public string Isbn {  get; set; }
         public string Publisher { get; set; }
         public IEnumerable<string> GenreNames {  get; set; }
+        public DateTime? DeletedAt { get; set; }
     }
 }

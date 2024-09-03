@@ -14,5 +14,6 @@ namespace ASPProjekat.ApplicationLayer.DTO
         public string Email { get; set; }
         public string Role { get; set; }
         public int WishlistNumber { get; set; }
+        public DateTime? DeletedAt {  get; set; }
     }
 }

@@ -31,5 +31,13 @@ namespace ASPProjekat.API.Controllers
             handler.HandleCommand(command, dto);
             return StatusCode(201);
         }
+        // DELETE api/<UsersController>
+        [HttpDelete]
+        public void Delete([FromBody] int id,
+                           [FromServices] IDeleteUser command,
+                           [FromServices] UseCaseHandler handler)
+        {
+            handler.HandleCommand(command, id);
+        }
     }
 }

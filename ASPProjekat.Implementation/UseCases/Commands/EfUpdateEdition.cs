@@ -28,9 +28,32 @@ namespace ASPProjekat.Implementation.UseCases.Commands
             Edition e=Context.Editions.Where(x=>x.Id==data.Id).FirstOrDefault<Edition>();
             if (e != null)
             {
+                ImageDto? image = null;
+                if (data.Image != null)
+                {
+                    var guid = Guid.NewGuid();
+                    var extension = Path.GetExtension(data.Image.File.FileName);
+
+                    var newFileName = guid + extension;
+
+                    var path = Path.Combine("wwwroot", "images", "editions", newFileName);
+
+                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        data.Image.File.CopyTo(fileStream);
+                    }
+                    Image img = new Image { Path = newFileName };
+                    Context.Images.Add(img);
+                    Context.SaveChanges();
+                    image = new ImageDto
+                    {
+                        Id = img.Id,
+                        Path = img.Path
+                    };
+                }
                 e.PublisherId = data.PublisherId.HasValue ? data.PublisherId.Value : e.PublisherId;
                 e.BookId = data.BookId.HasValue ? data.BookId.Value : e.BookId;
-                e.ImageId = data.Image != null ? data.Image.Id : e.ImageId;
+                e.ImageId = image==null?1:image.Id;
                 Context.SaveChanges();
                 if (data.Price.HasValue)
                 {

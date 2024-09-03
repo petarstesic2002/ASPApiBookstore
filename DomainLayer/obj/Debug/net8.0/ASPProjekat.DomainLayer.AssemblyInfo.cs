@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ASPProjekat.DomainLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9341511b83cbc9b9a78f4f8ea15328080114044d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bc413a7f668102a56c32f54874d1f9b386c0660")]
 [assembly: System.Reflection.AssemblyProductAttribute("ASPProjekat.DomainLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ASPProjekat.DomainLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

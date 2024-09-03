@@ -24,12 +24,34 @@ namespace ASPProjekat.Implementation.UseCases.Commands
         }
         public void Execute(CreateEditionDto data)
         {
-            var img = data.Image!=null ? data.Image : Context.Images.Where(x=>x.Id==1).Select(x=>new ImageDto { Id=x.Id,Path=x.Path}).FirstOrDefault();
+            ImageDto? image=null;
+            if (data.Image != null)
+            {
+                var guid = Guid.NewGuid();
+                var extension = Path.GetExtension(data.Image.File.FileName);
+
+                var newFileName = guid + extension;
+
+                var path = Path.Combine("wwwroot", "images", "editions", newFileName);
+
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    data.Image.File.CopyTo(fileStream);
+                }
+                Image img = new Image { Path = newFileName };
+                Context.Images.Add(img);
+                Context.SaveChanges();
+                image = new ImageDto
+                {
+                    Id = img.Id,
+                    Path = img.Path
+                };
+            }
             _validator.ValidateAndThrow(data);
             Edition e = new Edition
             {
                 BookId = data.BookId,
-                ImageId = img.Id,
+                ImageId = image==null?1:image.Id,
                 PublisherId=data.PublisherId
             };
             Context.Editions.Add(e);

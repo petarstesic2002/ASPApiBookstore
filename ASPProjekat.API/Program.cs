@@ -55,7 +55,7 @@ builder.Services.AddTransient<JwtManager>(x =>
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Nedelja 10", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ASPBookstore", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
@@ -149,11 +149,14 @@ builder.Services.AddTransient<IGetBooks, EfGetBooks>();
 builder.Services.AddTransient<IGetUsers, EfGetUsers>();
 builder.Services.AddTransient<IGetUserOrders, EfGetUserOrders>();
 builder.Services.AddTransient<ICheckBookAvailability, EfCheckBookAvailability>();
+builder.Services.AddTransient<IGetUniqueBooks, EfGetUniqueBooks>();
 builder.Services.AddTransient<ICreateBook, EfCreateBook>();
 builder.Services.AddTransient<ICreateEdition, EfCreateEdition>();
 builder.Services.AddTransient<ICreateOrder, EfCreateOrder>();
 builder.Services.AddTransient<IUpdateBook, EfUpdateBook>();
 builder.Services.AddTransient<IUpdateEdition, EfUpdateEdition>();
+builder.Services.AddTransient<IDeleteBook, EfDeleteBook>();
+builder.Services.AddTransient<IDeleteEdition, EfDeleteEdition>();
 builder.Services.AddJwt(settings);
 
 var app = builder.Build();

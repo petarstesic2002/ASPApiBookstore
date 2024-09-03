@@ -20,15 +20,12 @@ namespace ASPProjekat.API.Controllers
             _context = context;
         }
 
-        // GET: api/<BooksController>
+        // GET api<BooksController>
         [HttpGet]
-        public IActionResult Get([FromQuery] BookSearchDto search,
-                                [FromServices] IGetBooks query,
-                                 [FromServices] UseCaseHandler handler)
+        public IActionResult Get([FromQuery] UniqueBookSearchDto dto, [FromServices] IGetUniqueBooks query, [FromServices] UseCaseHandler handler)
         {
-            return Ok(handler.HandleQuery(query, search));
+            return Ok(handler.HandleQuery(query, dto));
         }
-
         // POST api/<BooksController>
         [HttpPost]
         public IActionResult Post([FromBody] CreateBookDto dto,
@@ -39,13 +36,17 @@ namespace ASPProjekat.API.Controllers
             handler.HandleCommand(command,dto);
             return StatusCode(201);
         }
-
-
         // PUT api/<BooksController>
         [HttpPut]
         public void Put([FromBody] UpdateBookDto dto, [FromServices] IUpdateBook command, [FromServices] UseCaseHandler handler)
         {
             handler.HandleCommand(command,dto);
+        }
+        // DELETE api<BooksController>
+        [HttpDelete]
+        public void Delete([FromBody] int id, [FromServices] IDeleteBook command, [FromServices] UseCaseHandler handler)
+        {
+            handler.HandleCommand(command,id);
         }
     }
 }

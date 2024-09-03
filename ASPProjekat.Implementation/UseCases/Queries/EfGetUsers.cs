@@ -44,7 +44,8 @@ namespace ASPProjekat.Implementation.UseCases.Queries
                     LastName = x.LastName,
                     Email = x.Email,
                     Role = x.Role.Name,
-                    WishlistNumber = x.UserEditions.Count()
+                    WishlistNumber = x.UserEditions.Count(),
+                    DeletedAt=x.DeletedAt
 
                 }).ToList(),
                 PerPage=perPage

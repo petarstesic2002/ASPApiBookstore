@@ -1,7 +1,11 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Petar\\Documents\\GitHub\\aspbookstore\\ASPProjekat.API\\wwwroot\\images\\editions\\default.png",
+      "Id": "C:\\Users\\Petar\\Documents\\GitHub\\ASPApiBookstore\\ASPProjekat.API\\wwwroot\\images\\editions\\b363f09a-889f-4f82-96ab-718145e38dcb.png",
+      "PackagePath": "staticwebassets\\images\\editions\\b363f09a-889f-4f82-96ab-718145e38dcb.png"
+    },
+    {
+      "Id": "C:\\Users\\Petar\\Documents\\GitHub\\ASPApiBookstore\\ASPProjekat.API\\wwwroot\\images\\editions\\default.png",
       "PackagePath": "staticwebassets\\images\\editions\\default.png"
     },
     {

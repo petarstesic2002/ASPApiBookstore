@@ -17,11 +17,10 @@ namespace ASPProjekat.Implementation.Validators
         {
             _context = ctx;
             CascadeMode = CascadeMode.StopOnFirstFailure;
-
-            RuleFor(x => x.Price).GreaterThan(0);
+            RuleFor(x => x.Price).GreaterThan(0).When(x=>x.Price.HasValue);
             RuleFor(x => x.BookId)
-                .GreaterThan(0).Must(InvalidBookId).WithMessage("Invalid Book Id");
-            RuleFor(x => x.PublisherId).GreaterThan(0).Must(InvalidPublisherId).WithMessage("Invalid Publisher Id");
+                .GreaterThan(0).Must(InvalidBookId).WithMessage("Invalid Book Id").When(x=>x.BookId.HasValue);
+            RuleFor(x => x.PublisherId).GreaterThan(0).Must(InvalidPublisherId).WithMessage("Invalid Publisher Id").When(x => x.PublisherId.HasValue);
 
         }
         private bool InvalidBookId(int? id)

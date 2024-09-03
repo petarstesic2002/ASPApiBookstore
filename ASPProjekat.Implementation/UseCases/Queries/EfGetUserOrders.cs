@@ -46,7 +46,8 @@ namespace ASPProjekat.Implementation.UseCases.Queries
                         PriceId = x.PriceId,
                         Quantity=x.Quantity
                     }).ToList(),
-                    OrderId = x.Id
+                    OrderId = x.Id,
+                    DeletedAt=x.DeletedAt
                 }).ToList(),
                 CurrentPage = page,
                 TotalCount = totalCount,

@@ -46,8 +46,21 @@ namespace ASPProjekat.Implementation
             {
                 throw new UnauthorizedAccessException();
             }
-            var log = new UseCaseLogDto(useCase.Id,_user.Id,data);
-
+            if (data is UpdateEditionDto || data is CreateEditionDto)
+            {
+                var obj = data as UpdateEditionDto;
+                var tmpData = new EditionUseCaseData
+                {
+                    BookId = obj.BookId,
+                    Image = "imagepath",
+                    AvailableStores = obj.AvailableStores,
+                    Price = obj.Price,
+                    PublisherId = obj.PublisherId
+                };
+                data = tmpData;
+            }
+            var log = new UseCaseLogDto(useCase.Id, _user.Id, data);
+           
             _logger.Log(log);
         }
     }

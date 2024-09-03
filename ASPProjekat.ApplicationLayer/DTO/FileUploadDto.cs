@@ -1,4 +1,6 @@
-﻿namespace ASPProjekat.API.DTO
+﻿using Microsoft.AspNetCore.Http;
+
+namespace ASPProjekat.API.DTO
 {
     public class FileUploadDto
     {

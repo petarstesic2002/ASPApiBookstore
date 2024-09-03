@@ -13,6 +13,8 @@ namespace ASPProjekat.ApplicationLayer.DTO
         public string PublicationYear { get; set; } = "";
         public string Genre { get; set; } = "";
         public int AuthorId { get; set; } = 0;
+        public decimal PriceMin { get; set; } = 0;
+        public decimal PriceMax { get; set; } = 0;
 
     }
 }

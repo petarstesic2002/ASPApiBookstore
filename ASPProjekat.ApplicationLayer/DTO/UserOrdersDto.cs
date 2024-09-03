@@ -13,5 +13,6 @@ namespace ASPProjekat.ApplicationLayer.DTO
         public int OrderId { get; set; }
         public DateTime OrderedAt {  get; set; }
         public IEnumerable<OrderItemDto> OrderBooks { get; set; }
+        public DateTime? DeletedAt { get; set; }
     }
 }

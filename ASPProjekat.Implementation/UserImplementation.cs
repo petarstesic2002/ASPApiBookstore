@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ASPProjekat.Implementation
 {
-    public class UserImplementation:IUserUseCase
+    public class UserImplementation : IUserUseCase
     {
-        public int Id {  get; set; }
+        public int Id { get; set; }
         public string Email { get; set; }
         public IEnumerable<int> AllowedUseCases { get; set; }
     }
@@ -17,6 +17,6 @@ namespace ASPProjekat.Implementation
     {
         public int Id => 0;
         public string Email => "/";
-        public IEnumerable<int> AllowedUseCases { get; set; } = new List<int> { 1,4 };
+        public IEnumerable<int> AllowedUseCases { get; set; } = new List<int> { 1, 4, 13 };
     }
 }

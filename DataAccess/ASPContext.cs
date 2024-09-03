@@ -167,6 +167,21 @@ namespace ASPProjekat.DataAccess
                 {
                     Id = 10,
                     Name = "Update Edition"
+                },
+                new UseCase
+                {
+                    Id = 11,
+                    Name = "Delete Edition"
+                },
+                new UseCase
+                {
+                    Id = 12,
+                    Name = "Delete Book"
+                },
+                new UseCase
+                {
+                    Id = 13,
+                    Name = "Search Unique Books"
                 }
             );
             modelBuilder.Entity<RoleUseCase>().HasData(
@@ -247,6 +262,30 @@ namespace ASPProjekat.DataAccess
                     Id = 13,
                     RoleId = 1,
                     UseCaseId = 8
+                },
+                new RoleUseCase
+                {
+                    Id = 14,
+                    RoleId = 1,
+                    UseCaseId = 11
+                },
+                new RoleUseCase
+                {
+                    Id = 15,
+                    RoleId = 1,
+                    UseCaseId = 12
+                },
+                new RoleUseCase
+                {
+                    Id = 16,
+                    RoleId = 1,
+                    UseCaseId = 13
+                },
+                new RoleUseCase
+                {
+                    Id = 17,
+                    RoleId = 2,
+                    UseCaseId = 13
                 }
             );
             modelBuilder.Entity<Genre>().HasData(

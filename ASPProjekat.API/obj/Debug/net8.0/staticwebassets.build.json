@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LqCBs7J3H6p0HjNKWfzbwypNxwnkjJMbxGBLV3MiJcE=",
+  "Hash": "vSmIgMHHzoLKmSdw8DAjSWLRJ2dhL4i6B83A9enWQK4=",
   "Source": "ASPProjekat.API",
   "BasePath": "_content/ASPProjekat.API",
   "Mode": "Default",
@@ -10,17 +10,36 @@
     {
       "Name": "ASPProjekat.API\\wwwroot",
       "Source": "ASPProjekat.API",
-      "ContentRoot": "C:\\Users\\Petar\\Documents\\GitHub\\aspbookstore\\ASPProjekat.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Petar\\Documents\\GitHub\\ASPApiBookstore\\ASPProjekat.API\\wwwroot\\",
       "BasePath": "_content/ASPProjekat.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Petar\\Documents\\GitHub\\aspbookstore\\ASPProjekat.API\\wwwroot\\images\\editions\\default.png",
+      "Identity": "C:\\Users\\Petar\\Documents\\GitHub\\ASPApiBookstore\\ASPProjekat.API\\wwwroot\\images\\editions\\b363f09a-889f-4f82-96ab-718145e38dcb.png",
       "SourceId": "ASPProjekat.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Petar\\Documents\\GitHub\\aspbookstore\\ASPProjekat.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Petar\\Documents\\GitHub\\ASPApiBookstore\\ASPProjekat.API\\wwwroot\\",
+      "BasePath": "_content/ASPProjekat.API",
+      "RelativePath": "images/editions/b363f09a-889f-4f82-96ab-718145e38dcb.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\editions\\b363f09a-889f-4f82-96ab-718145e38dcb.png"
+    },
+    {
+      "Identity": "C:\\Users\\Petar\\Documents\\GitHub\\ASPApiBookstore\\ASPProjekat.API\\wwwroot\\images\\editions\\default.png",
+      "SourceId": "ASPProjekat.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Petar\\Documents\\GitHub\\ASPApiBookstore\\ASPProjekat.API\\wwwroot\\",
       "BasePath": "_content/ASPProjekat.API",
       "RelativePath": "images/editions/default.png",
       "AssetKind": "All",

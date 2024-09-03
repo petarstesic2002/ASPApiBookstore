@@ -16,7 +16,7 @@ namespace ASPProjekat.Implementation.UseCases.Queries
     {
         public EfGetBooks(ASPContext context) : base(context) { }
         public int Id => 1;
-        public string Name => "Search Books";
+        public string Name => "Search Editions";
         public PagedResponseDto<BookDto> Execute(BookSearchDto search)
         {
             var query = Context.Editions.AsQueryable();
@@ -30,11 +30,19 @@ namespace ASPProjekat.Implementation.UseCases.Queries
             }
             if (search.AuthorId > 0)
             {
-                query=query.Where(x=>x.Book.AuthorId == search.AuthorId);
+                query = query.Where(x => x.Book.AuthorId == search.AuthorId);
             }
             if (!string.IsNullOrEmpty(search.Genre))
             {
                 query = query.Where(x => x.Book.BookGenres.Any(x=>x.Genre.Name==search.Genre));
+            }
+            if (search.PriceMax > 0)
+            {
+                query = query.Where(x=>x.Prices.OrderByDescending(y=>y.CreatedAt).First().Value<search.PriceMax);
+            }
+            if(search.PriceMin > 0)
+            {
+                query = query.Where(x => x.Prices.OrderByDescending(y => y.CreatedAt).First().Value > search.PriceMin);
             }
             int totalCount = query.Count();
             int perPage = search.PerPage.HasValue ? (int)Math.Abs((double)search.PerPage) : 10;
@@ -61,7 +69,8 @@ namespace ASPProjekat.Implementation.UseCases.Queries
                     Isbn = x.Book.Isbn,
                     LatestPrice = x.Prices.OrderByDescending(x => x.CreatedAt).Select(x => x.Value).FirstOrDefault(),
                     Publisher = x.Publisher.Name,
-                    ReleaseYear = x.Book.PublicationYear
+                    ReleaseYear = x.Book.PublicationYear,
+                    DeletedAt=x.DeletedAt
 
                 }).ToList(),
                 PerPage = perPage
